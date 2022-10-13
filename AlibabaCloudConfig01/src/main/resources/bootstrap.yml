@@ -1,0 +1,15 @@
+server:
+  port: 9000
+
+# 服务名称
+spring:
+  application:
+    name: nacos-config-client
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 注册地址
+      config:
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848 # 配置地址
