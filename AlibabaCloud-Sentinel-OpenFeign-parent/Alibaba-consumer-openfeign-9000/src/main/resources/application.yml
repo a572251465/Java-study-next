@@ -1,0 +1,29 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8179
+
+      datasource:
+        nacos:
+          nacos:
+            serverAddr: localhost:8848
+            groupId: DEFAULT_GROUP
+            dataId: consumer-openfeign-client-sentinel.json
+            ruleType: flow
+
+  application:
+    name: consumer-openfeign-client
+  profiles:
+    active: dev
+
+feign:
+  sentinel:
+    enabled: true
