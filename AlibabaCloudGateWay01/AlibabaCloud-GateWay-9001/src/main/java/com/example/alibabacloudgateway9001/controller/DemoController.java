@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/coo")
+@RequestMapping(value = "/lihh/coo")
 public class DemoController {
 
     @Value("${server.port}")

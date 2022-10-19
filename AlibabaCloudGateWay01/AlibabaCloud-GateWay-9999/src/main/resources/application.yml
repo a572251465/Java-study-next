@@ -11,10 +11,11 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
 
       routes:
         - id: gateway-client
-          uri: http://localhost:9001/gateway-client
+          # uri: http://localhost:9001/gateway-client
+          uri: lb://gateway-client
           predicates:
-            - Path=/coo/**
+            - Path=/lihh/**
