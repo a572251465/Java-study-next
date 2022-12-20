@@ -26,10 +26,10 @@
     <context:component-scan base-package="com.lihh.controller" />
 
     <!-- 配置三大组件   -->
-    <mvc:annotation-driven />
+<!--    <mvc:annotation-driven />-->
 
     <!-- 配置视图解析器 如果只是作为接口服务器，下面的配置不要也行   -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />-->
 
     <!-- 配置资源放行 下面注释中 需要放行哪些资源后 直接删除注释  -->
     <!--<mvc:resources mapping="/js/**" location="/js/"></mvc:resources>-->
