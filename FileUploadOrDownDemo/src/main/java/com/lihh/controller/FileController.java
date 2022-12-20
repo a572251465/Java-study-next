@@ -18,7 +18,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping(value = "/files")
