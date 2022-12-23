@@ -1,0 +1,997 @@
+2022-12-21 22:20:10.028 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 17388 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:20:10.031 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:20:10.831 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:20:10.836 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:20:10.837 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:20:10.837 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:20:10.883 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:20:10.883 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 804 ms
+2022-12-21 22:20:10.923 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:20:10.981 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:20:11.153 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:20:11.285 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:20:11.297 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:20:11.304 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.609 seconds (JVM running for 2.311)
+2022-12-21 22:20:49.523 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:20:49.523 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:20:49.526 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:20:49.587 [http-nio-8081-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.lihh.mapper.EmpMapper.findAll] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.lihh.mapper.EmpMapper.findAll
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:115)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:102)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy52.findAll(Unknown Source)
+	at com.lihh.service.impl.EmpServiceImpl.findAll(EmpServiceImpl.java:19)
+	at com.lihh.controller.EmpController.findAll(EmpController.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-12-21 22:21:39.167 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:21:39.168 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:21:41.762 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 26976 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:21:41.765 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:21:42.456 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:21:42.461 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:21:42.461 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:21:42.461 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:21:42.508 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:21:42.508 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 706 ms
+2022-12-21 22:21:42.548 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:21:42.608 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:21:42.779 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:21:42.913 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:21:42.925 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:21:42.931 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.451 seconds (JVM running for 2.138)
+2022-12-21 22:21:51.114 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:21:51.114 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:21:51.118 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-12-21 22:21:51.236 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp;
+2022-12-21 22:21:51.250 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 
+2022-12-21 22:21:51.271 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 14
+2022-12-21 22:22:59.475 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:22:59.480 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:23:03.902 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 27028 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:23:03.904 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:23:04.413 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.lihh]' package. Please check your configuration.
+2022-12-21 22:23:04.612 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:23:04.617 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:23:04.617 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:23:04.617 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:23:04.667 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:23:04.667 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 722 ms
+2022-12-21 22:23:04.760 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:23:04.830 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:23:04.898 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:23:05.075 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:23:05.089 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:23:05.096 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.487 seconds (JVM running for 2.138)
+2022-12-21 22:23:09.814 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:23:09.814 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:23:09.817 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:24:32.230 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:24:32.231 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:24:37.869 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 144 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:24:37.871 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:24:38.459 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.lihh]' package. Please check your configuration.
+2022-12-21 22:24:38.655 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:24:38.660 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:24:38.660 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:24:38.661 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:24:38.717 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:24:38.717 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 801 ms
+2022-12-21 22:24:38.810 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:24:38.879 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:24:38.940 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:24:39.126 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:24:39.138 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:24:39.145 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.555 seconds (JVM running for 2.26)
+2022-12-21 22:24:44.889 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:24:44.890 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:24:44.893 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:27:05.884 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:27:05.884 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:27:10.859 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 28064 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:27:10.862 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:27:11.570 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:27:11.576 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:27:11.576 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:27:11.576 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:27:11.624 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:27:11.624 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 720 ms
+2022-12-21 22:27:11.664 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:27:11.726 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:27:11.920 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:27:12.083 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:27:12.096 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:27:12.104 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.548 seconds (JVM running for 2.507)
+2022-12-21 22:27:15.805 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:27:15.806 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:27:15.809 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:27:15.923 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp;
+2022-12-21 22:27:15.935 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 
+2022-12-21 22:27:15.952 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 14
+2022-12-21 22:36:28.738 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:36:28.743 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:36:37.206 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 29524 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:36:37.208 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:36:38.028 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:36:38.035 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:36:38.035 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:36:38.036 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:36:38.118 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:36:38.118 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 866 ms
+2022-12-21 22:36:38.195 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:36:38.283 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:36:38.525 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:36:38.705 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:36:38.719 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:36:38.726 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.861 seconds (JVM running for 2.869)
+2022-12-21 22:37:50.797 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:37:50.797 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:37:50.800 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:37:50.927 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:37:50.940 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:37:50.959 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:37:50.961 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp; LIMIT ?
+2022-12-21 22:37:50.962 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:37:51.011 [http-nio-8081-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 3' at line 1
+### The error may exist in file [E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes\mybatis\EmpMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select * from emp; LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 3' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 3' at line 1] with root cause
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 3' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy72.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:136)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy70.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy53.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy54.findAll(Unknown Source)
+	at com.lihh.service.impl.EmpServiceImpl.findAll(EmpServiceImpl.java:22)
+	at com.lihh.controller.EmpController.findAll(EmpController.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-12-21 22:38:20.649 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:38:20.654 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:38:23.718 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 2712 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:38:23.720 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:38:24.615 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:38:24.620 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:38:24.621 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:38:24.621 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:38:24.671 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:38:24.671 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 902 ms
+2022-12-21 22:38:24.713 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:38:24.776 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:38:24.956 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:38:25.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:38:25.132 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:38:25.138 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.734 seconds (JVM running for 2.498)
+2022-12-21 22:38:39.525 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:38:39.525 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:38:39.529 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-12-21 22:38:39.647 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:38:39.660 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:38:39.676 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:38:39.678 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:38:39.678 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:38:39.681 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:38:53.126 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:38:53.130 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:42:27.879 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 29836 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:42:27.883 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:42:28.605 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:42:28.609 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:42:28.610 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:42:28.610 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:42:28.663 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:42:28.664 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 731 ms
+2022-12-21 22:42:28.708 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:42:28.772 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:42:28.953 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:42:29.109 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:42:29.121 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:42:29.128 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.554 seconds (JVM running for 2.302)
+2022-12-21 22:42:55.569 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:42:55.569 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:42:55.572 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:44:46.908 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:44:46.909 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:46:53.460 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 10968 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:46:53.463 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:46:54.162 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:46:54.166 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:46:54.167 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:46:54.167 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:46:54.221 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:46:54.221 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 711 ms
+2022-12-21 22:46:54.263 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:46:54.325 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:46:54.512 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:46:54.678 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:46:54.691 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:46:54.698 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.543 seconds (JVM running for 2.307)
+2022-12-21 22:47:01.991 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:47:01.991 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:47:01.996 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2022-12-21 22:47:02.115 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:47:02.127 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:47:02.143 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:47:02.145 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:47:02.146 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:47:02.148 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:16.492 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:50:16.496 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:50:19.478 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 1268 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:50:19.480 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:50:20.313 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:50:20.320 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:50:20.321 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:50:20.321 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:50:20.388 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:50:20.388 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 857 ms
+2022-12-21 22:50:20.432 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:50:20.494 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:50:20.684 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:50:20.843 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:50:20.856 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:50:20.863 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.708 seconds (JVM running for 2.444)
+2022-12-21 22:50:25.250 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:50:25.251 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:50:25.254 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 22:50:34.791 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:34.806 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:34.822 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:34.825 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:34.825 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:34.828 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:34.829 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:34.830 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:34.831 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:34.833 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:34.833 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:34.835 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:34.914 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:34.914 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:34.916 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:34.917 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:34.917 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:34.920 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.038 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.039 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.042 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.043 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.043 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.046 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.156 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.157 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.158 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.160 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.160 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.161 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.277 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.278 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.280 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.282 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.282 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.285 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.375 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.375 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.377 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.377 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.378 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.379 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.485 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.485 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.489 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.489 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.490 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.492 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.594 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.595 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.597 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.598 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.599 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.601 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.705 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.706 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.709 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.711 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.711 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.713 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.828 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.828 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.831 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.832 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.832 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.833 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:35.948 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:35.948 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:35.951 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:35.952 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:35.953 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:35.954 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.055 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.055 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.058 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.058 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.058 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.059 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.176 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.176 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.178 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.179 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.180 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.183 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.284 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.285 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.287 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.288 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.288 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.289 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.397 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.397 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.399 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.400 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.401 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.403 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.503 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.504 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.505 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.506 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.506 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.507 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:36.626 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:36.626 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:36.630 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:36.631 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:36.631 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:36.632 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:37.026 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:37.026 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:37.029 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:37.030 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:37.031 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:37.032 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:37.174 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:37.175 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:37.177 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:37.178 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:37.179 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:37.180 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:37.276 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:37.276 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:37.279 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:37.280 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:37.281 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:37.283 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:37.375 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:37.375 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:37.376 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:37.377 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:37.377 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:37.378 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:50:37.496 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:50:37.496 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:50:37.498 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:50:37.500 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:50:37.500 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:50:37.502 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:51:07.039 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:51:07.045 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:51:09.885 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 25056 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:51:09.889 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:51:10.694 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:51:10.699 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:51:10.700 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:51:10.700 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:51:10.753 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:51:10.754 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 813 ms
+2022-12-21 22:51:10.799 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:51:10.869 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:51:11.064 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:51:11.249 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:51:11.262 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:51:11.269 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.701 seconds (JVM running for 2.443)
+2022-12-21 22:51:17.588 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:51:17.588 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:51:17.592 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-12-21 22:51:58.749 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:51:58.750 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 22:52:07.126 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 26320 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 22:52:07.129 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 22:52:07.859 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 22:52:07.866 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:52:07.867 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 22:52:07.867 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 22:52:07.931 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 22:52:07.932 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 761 ms
+2022-12-21 22:52:08.009 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 22:52:08.115 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 22:52:08.317 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:52:08.492 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 22:52:08.505 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 22:52:08.513 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.69 seconds (JVM running for 2.675)
+2022-12-21 22:57:48.108 [http-nio-8081-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 22:57:48.108 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 22:57:48.113 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2022-12-21 22:57:48.260 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.277 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.278 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.279 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.296 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.296 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.299 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.299 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.300 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.300 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.305 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.305 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.364 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.365 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.368 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.372 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.374 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.376 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.464 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.465 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.467 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.468 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.469 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.472 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.605 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.606 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.608 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.608 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.609 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.610 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.716 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.717 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.720 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.721 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.721 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.723 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.825 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.826 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.829 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.830 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.830 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.832 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:48.938 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:48.938 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:48.942 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:48.942 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:48.943 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:48.945 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.057 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.058 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.061 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.061 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.062 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.063 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.164 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.164 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.166 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.167 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.168 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.170 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.274 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.274 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.277 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.278 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.278 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.279 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.373 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.373 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.375 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.375 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.375 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.376 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.488 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.488 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.491 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.491 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.492 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.493 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:57:49.604 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:57:49.605 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:57:49.607 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:57:49.608 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:57:49.609 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:57:49.611 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.244 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.244 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.246 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.247 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.248 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.249 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.504 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.505 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.507 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.508 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.509 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.510 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.585 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.585 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.588 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.589 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.589 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.590 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.694 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.694 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.696 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.697 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.697 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.698 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.777 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.777 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.779 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.780 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.780 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.781 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.909 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.909 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.912 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.913 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.913 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.914 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:03.963 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:03.964 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:03.965 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:03.966 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:03.966 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:03.968 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.096 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.096 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.099 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.100 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.100 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.101 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.203 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.204 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.207 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.207 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.207 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.208 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.303 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.304 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.306 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.306 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.306 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.308 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.385 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.385 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.388 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.389 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.389 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.390 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.514 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.514 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.516 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.517 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.517 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.518 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.614 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.615 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.616 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.617 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.617 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.620 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.713 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.713 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.715 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.715 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.716 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.717 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.804 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.804 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.806 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.807 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.807 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.808 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:04.925 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:04.926 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:04.929 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:04.929 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:04.930 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:04.931 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.034 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.034 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.036 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.036 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.037 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.037 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.145 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.145 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.147 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.149 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.149 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.150 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.245 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.245 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.247 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.247 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.248 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.249 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.357 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.357 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.359 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.360 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.360 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.361 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.464 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.464 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.466 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.467 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.468 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.469 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.573 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.574 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.576 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.576 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.577 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.577 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.795 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.795 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.798 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.799 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.799 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.800 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.905 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.905 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.908 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.909 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.909 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:05.910 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:05.994 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:05.995 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:05.996 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:05.997 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:05.997 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.000 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.115 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.115 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.117 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.118 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.118 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.120 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.224 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.224 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.227 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.228 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.228 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.229 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.353 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.353 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.355 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.356 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.356 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.358 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.418 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.418 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.420 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.421 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.421 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.422 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.553 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.554 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.555 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.557 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.557 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.559 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.663 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.664 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.665 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.666 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.666 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.668 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.795 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.795 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.797 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.797 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.797 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.798 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:06.893 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:06.893 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:06.895 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:06.896 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:06.897 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:06.898 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.114 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.114 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.116 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.118 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.118 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.119 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.225 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.225 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.229 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.229 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.229 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.230 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.344 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.344 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.346 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.348 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.348 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.349 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.443 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.444 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.446 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.447 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.447 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.448 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.564 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.565 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.567 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.569 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.569 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.570 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.684 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.684 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.687 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.687 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.688 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.689 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.793 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.793 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.795 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.795 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.795 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.796 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:07.905 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:07.905 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:07.908 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:07.909 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:07.909 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:07.910 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.015 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.015 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.017 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.018 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.019 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.020 [http-nio-8081-exec-7] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.118 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.118 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.121 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.122 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.122 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.123 [http-nio-8081-exec-10] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.235 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.235 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.238 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.239 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.239 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.240 [http-nio-8081-exec-3] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.336 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.336 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.339 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.340 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.340 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.341 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.454 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.455 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.457 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.458 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.458 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.459 [http-nio-8081-exec-2] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.564 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.564 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.565 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.566 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.566 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.568 [http-nio-8081-exec-9] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.683 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.683 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.684 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.685 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.685 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.686 [http-nio-8081-exec-5] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.805 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.805 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.807 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.808 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.808 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.810 [http-nio-8081-exec-6] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:08.904 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:08.904 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:08.906 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:08.907 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:08.908 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:08.909 [http-nio-8081-exec-8] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:09.004 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 22:58:09.004 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 22:58:09.005 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 22:58:09.006 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 22:58:09.006 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 22:58:09.006 [http-nio-8081-exec-1] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 22:58:52.682 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 22:58:52.687 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 23:16:42.131 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 9016 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 23:16:42.133 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 23:16:42.792 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 23:16:42.798 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:16:42.798 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 23:16:42.798 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 23:16:42.847 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 23:16:42.847 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 674 ms
+2022-12-21 23:16:42.898 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 23:16:42.970 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 23:16:43.159 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:16:43.322 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:16:43.335 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 23:16:43.340 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.509 seconds (JVM running for 2.194)
+2022-12-21 23:17:25.798 [http-nio-8081-exec-4] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 23:17:25.799 [http-nio-8081-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 23:17:25.803 [http-nio-8081-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-12-21 23:17:25.918 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==>  Preparing: SELECT count(0) FROM emp
+2022-12-21 23:17:25.932 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - ==> Parameters: 
+2022-12-21 23:17:25.947 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll_COUNT - <==      Total: 1
+2022-12-21 23:17:25.949 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==>  Preparing: select * from emp LIMIT ?
+2022-12-21 23:17:25.949 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - ==> Parameters: 3(Integer)
+2022-12-21 23:17:25.952 [http-nio-8081-exec-4] DEBUG com.lihh.mapper.EmpMapper.findAll - <==      Total: 3
+2022-12-21 23:19:47.870 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:19:47.880 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 23:20:10.518 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 31240 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 23:20:10.520 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 23:20:11.244 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 23:20:11.249 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:20:11.250 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 23:20:11.250 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 23:20:11.299 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 23:20:11.300 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 737 ms
+2022-12-21 23:20:11.340 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 23:20:11.400 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 23:20:11.571 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:20:11.719 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:20:11.731 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 23:20:11.738 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.581 seconds (JVM running for 2.478)
+2022-12-21 23:20:12.004 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-21 23:20:12.004 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-21 23:20:12.007 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-21 23:20:29.232 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:20:29.233 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-12-21 23:20:36.990 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Starting MyBatisLogBackDruidApplication on DESKTOP-RI7J3IM with PID 30960 (E:\my_project\Java-study-next\MyBatisLogBackDruld\target\classes started by Lenovo in E:\my_project\Java-study-next)
+2022-12-21 23:20:36.992 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - No active profile set, falling back to default profiles: default
+2022-12-21 23:20:37.674 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-21 23:20:37.678 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:20:37.679 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-21 23:20:37.679 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-12-21 23:20:37.728 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-21 23:20:37.728 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 692 ms
+2022-12-21 23:20:37.778 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-21 23:20:37.848 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-21 23:20:38.055 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:20:38.236 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-21 23:20:38.252 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-21 23:20:38.260 [main] INFO  com.lihh.MyBatisLogBackDruidApplication - Started MyBatisLogBackDruidApplication in 1.581 seconds (JVM running for 2.414)
+2022-12-21 23:25:42.841 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-21 23:25:42.842 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
