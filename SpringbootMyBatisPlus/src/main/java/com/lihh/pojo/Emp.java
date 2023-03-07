@@ -17,7 +17,7 @@ public class Emp implements Serializable {
     private String ename;
     private String job;
     private Integer mgr;
-    private Date hiredate;
+    private String hiredate;
     private Double sal;
     private Double comm;
     private Integer deptno;

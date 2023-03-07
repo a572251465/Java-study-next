@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 添加lazy-init 属性避免在 ClassPathXmlApplicationContext 实例化的时候 读取示例   -->
+    <bean id="user001" class="plus.chendd.DI.User" lazy-init="true"></bean>
+
+    <bean id="user002" class="plus.chendd.DI.User" scope="singleton"/>
+</beans>
