@@ -23,6 +23,7 @@ public class DaoAspect {
         System.out.println("beforeMethod ... 前置通知");
         Object[] args = joinPoint.getArgs();
         System.out.println(Arrays.toString(args));
+        System.out.println(joinPoint.getTarget().getClass().getSimpleName());
     }
 
     /**

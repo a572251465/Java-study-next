@@ -14,6 +14,6 @@ public class TestAop {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
         UserDao userDao = applicationContext.getBean(ManUserDaoImpl.class);
         userDao.addUser("1", "lihh");
-        userDao.updateUser("1", "lihh");
+//        userDao.updateUser("1", "lihh");
     }
 }
