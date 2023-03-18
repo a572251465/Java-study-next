@@ -17,6 +17,7 @@ import java.util.List;
 public class Test001 {
   
   private SqlSession sqlSession;
+  private SqlSession sqlSession01;
   
   @Before
   public void init() {
@@ -29,6 +30,7 @@ public class Test001 {
     }
     SqlSessionFactory build = sqlSessionFactoryBuilder.build(resourceAsStream);
     sqlSession = build.openSession();
+    sqlSession01 = build.openSession();
   }
   
   
@@ -43,10 +45,27 @@ public class Test001 {
     PlanTaskMapper mapper = sqlSession.getMapper(PlanTaskMapper.class);
     List<PlanTask> all = mapper.findAll("11111");
     print(all);
+    
+    sqlSession.commit();
+  
+    List<PlanTask> all1 = mapper.findAll("11111");
+    print(all1);
+  }
+  
+  @Test
+  public void test02() {
+    PlanTaskMapper mapper = sqlSession.getMapper(PlanTaskMapper.class);
+    List<PlanTask> all = mapper.findAll("11111");
+    print(all);
+  
+    PlanTaskMapper mapper1 = sqlSession01.getMapper(PlanTaskMapper.class);
+    List<PlanTask> all1 = mapper1.findAll("11111");
+    print(all1);
   }
   
   @After
   public void after() {
     sqlSession.close();
+    sqlSession01.close();
   }
 }
